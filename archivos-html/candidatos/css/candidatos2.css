@@ -1,0 +1,166 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Encabezado */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.dropdown-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+    background-color: #2980b9;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    width: 100%;
+}
+
+.dropdown-list li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-list li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-list li a,
+.dropdown-list li button {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    width: 100%;
+}
+
+.dropdown-list li a:hover,
+.dropdown-list li button:hover {
+    background-color: #ecf0f1;
+}
+
+/* Mostrar lista al pasar el ratón */
+.dropdown:hover .dropdown-list {
+    display: block;
+}
+
+/* Sección de candidatos */
+.highlighted-candidates {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.candidate {
+    text-align: center;
+}
+
+.candidate h3 {
+    font-size: 18px;
+    color: #3498db;
+}
+
+.candidate p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Sección de vocales */
+.vocales-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.vocales-grid1, .vocales-grid2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 48%;
+}
+
+.vocal {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 45%;
+    text-align: center;
+}
+
+.vocal h4 {
+    font-size: 16px;
+    color: #3498db;
+}
+
+.vocal p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilo de botones para superior y académico */
+.dropdown-list button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown-list button:hover {
+    background-color: #27ae60;
+}
+
+/* Estilo para el contenedor de la página */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
