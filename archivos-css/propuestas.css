@@ -10,7 +10,7 @@
     padding: 15px; /* separador de borde arriba,abajo*/
     width: 100%;
    
-    height: 100%;
+   
 }
 
 .galeria {
@@ -69,7 +69,7 @@ h2{
     max-width: 50%;
     width: 600px;
     max-height: 50%;
-    height: 600px;
+
 }
 .fondo {
     background: #000000; /* Fondo negro */

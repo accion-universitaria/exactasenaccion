@@ -1,12 +1,10 @@
-/* Estilo para el menú de navegación */
+/* Menú de navegación */
 .menu {
   width: 100%;
-
   display: flex;
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
-  text-align: center;
-  background: #f9f51c; /* Fondo del menú */
+  justify-content: center;
+  align-items: center;
+  background: var(--color-enlace);
 }
 
 .menu a {
@@ -15,7 +13,7 @@
   margin: 0 15px;
   font-size: 1.1em;
   padding: 5px 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.2s; /* Transición */
   border: 10px solid transparent;
 }
 
@@ -23,9 +21,11 @@
   background-color: #ffffff;
   border-radius: 15px;
   color: rgb(0, 0, 0);
-  border-color: #000000;
+  border-color: var(--color-borde-menu);
+  transform: scale(1.1); /* Efecto de escala */
 }
 
-.menu a:focus, .menu a:active {
+.menu a:focus,
+.menu a:active {
   border-color: white;
 }

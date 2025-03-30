@@ -12,7 +12,7 @@
 /* Estilos para el elemento interno */
 .fondo /*novedades*/{ 
     width: auto;                 /* Ancho del elemento interno */
-    height: auto;                /* Altura del elemento interno */
+              /* Altura del elemento interno */
     background-color: #000000;       /* Color de fondo oscuro */
     display: flex;                /* Flexbox para centrar la imagen */
     align-items:center;          /* Centrar verticalmente la imagen */
@@ -25,7 +25,7 @@
     color: rgb(0, 0, 0);
     text-align: center;
     width: 100%;
-    height: auto;
+
 }
 .CEFCE-logo {
     max-width: 140px; /* Ajusta el tamaño de acuerdo a tus preferencias */

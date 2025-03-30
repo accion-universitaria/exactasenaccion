@@ -1,62 +1,32 @@
-/* Estilo para el contenedor principal del título */
-.titulo {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente el contenido */
-  align-items: center; /* Centra verticalmente */
-  width: 100%;
+/* Título principal */
+.titulo-principal {
+  background-color: var(--fondo-principal);
+  color: var(--color-texto);
   padding: 20px;
-  box-sizing: border-box;
-  background-color: #2e2c2f;
-}
-
-/* Estilo para el contenedor de ExEA */
-.exa {
-  display: flex;
-  justify-content: center; /* Centra el contenido dentro del contenedor */
-  align-items: center;
-  width: auto; /* Permite que el contenedor se adapte al tamaño del logo */
-}
-
-/* Logo de ExEA */
-.titulo-logo-exa {
-  width: 150px; /* Ajusta el tamaño del logo */
-  height: auto;
-}
-
-
-/* Estilo para el contenedor de AU */
-.au {
-  display: flex;
-  justify-content: flex-end; /* Alinea el logo de AU a la derecha */
-  align-items: center;
-  width: 150px; /* Ajusta el tamaño del contenedor de AU */
-}
-
-/* Logo de AU */
-.titulo-logo-au {
-  width: 100px; /* Reducción del tamaño del logo de AU */
-  height: auto;
-}
-
-/* Estilo para el texto centrado entre los logos */
-.texto-centro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
   text-align: center;
-  margin: 0 20px;
 }
 
-.texto-centro p {
-  color: #efe102;
-  font-size: 1.2em; /* Tamaño de texto ajustado */
-  font-weight: bold;
-  margin: 0;
+.titulo-principal h1, .titulo-principal h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
 }
- h1{
- color:white;
+
+/* Estilo de la presentación */
+.presentacion {
+  width: auto;
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  background-color: white;
+  color: var(--fondo-principal);
 }
-h2{
-  color:white;
- }
+
+.presentacion img {
+  max-width: 40%;
+  margin-bottom: 20px;
+}
+
+.presentacion p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
