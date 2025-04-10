@@ -2,7 +2,7 @@
 .titulo-principal {
   background-color: var(--fondo-principal);
   color: var(--color-texto);
-  padding: 20px;
+  padding-right: 20px;
   text-align: center;
 }
 
