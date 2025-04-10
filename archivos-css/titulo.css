@@ -1,7 +1,7 @@
 /* Título principal */
 .titulo-principal {
   background-color: var(--fondo-principal);
-  color: var(--color-texto);
+  color:floralwhite;
   padding-right: 70px;
   text-align: center;
 }
