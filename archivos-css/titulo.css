@@ -20,7 +20,10 @@
   background-color: white;
   color: var(--fondo-principal);
 }
-
+img
+{
+  align-items: center;
+}
 .presentacion img {
   max-width: 40%;
   margin-bottom: 20px;
