@@ -1,0 +1,21 @@
+/* Estilo para la presentación */
+.presentacion {
+    width: auto;
+
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    background-color: white;
+    color:#2e2c2f;
+  }
+  
+  .presentacion img {
+    max-width: 40%;
+    margin-bottom: 20px;
+  }
+  
+  .presentacion p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  

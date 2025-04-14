@@ -1,0 +1,35 @@
+/* Título principal */
+.titulo-principal {
+  background-color: var(--fondo-principal);
+  color:floralwhite;
+  padding-right: 70px;
+  text-align: center;
+}
+
+.titulo-principal h1, .titulo-principal h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+}
+
+/* Estilo de la presentación */
+.presentacion {
+  width: auto;
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  background-color: white;
+  color: var(--fondo-principal);
+}
+img
+{
+  align-items: center;
+}
+.presentacion img {
+  max-width: 40%;
+  margin-bottom: 20px;
+}
+
+.presentacion p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
