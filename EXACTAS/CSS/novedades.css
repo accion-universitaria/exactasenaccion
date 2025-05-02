@@ -1,39 +1,210 @@
-/* Estilos para el contenedor principal */
-.panel {
-    width: 89%;                  /* Ocupa todo el ancho disponible */
- 
-    background-color: #000000;    /* Color de fondo gris claro */
-    display: flex;                /* Flexbox para centrar el contenido */
-    justify-content: left;      /* Centrar horizontalmente el contenido */
-   text-align: center;
-    border: 10px solid #a65252;       /* Borde gris claro */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header, nav,main,footer {
+    width: 100%;
+  }  
+/* GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+   font-family: Arial, sans-serif;
+    
+}
+/* CONTENEDOR PRINCIPAL DE ARTÍCULOS */
+
+.contenedor-articulos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    max-width: 100vw;
+    margin: 20px auto;
 }
 
-/* Estilos para el elemento interno */
-.fondo /*novedades*/{ 
-    width: auto;                 /* Ancho del elemento interno */
-              /* Altura del elemento interno */
-    background-color: #000000;       /* Color de fondo oscuro */
-    display: flex;                /* Flexbox para centrar la imagen */
-    align-items:center;          /* Centrar verticalmente la imagen */
-    text-align: center;
-    color: #ffffff;
+/* ESTILO DE CADA ARTÍCULO */
+.articulo {
+    background-color: #000;
+    border: 7px solid #fff;
+    padding: 2vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(30% - 20px);
+    min-width: 250px;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
-.titulo-novedades /*novedades*/
-{
-    background: #ffffff;
-    color: rgb(0, 0, 0);
+
+/* IMÁGENES DENTRO DE ARTÍCULOS */
+.articulo img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2vw;
+    display: block;
+}
+
+/* TEXTO DENTRO DE ARTÍCULOS */
+.texto-articulo {
+    text-align: justify;
+}
+
+/* TÍTULOS */
+h2 {
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
+    color: #fff;
+}
+
+/* PÁRRAFOS */
+p {
+    font-size: 1.8vw;
+    line-height: 1.6;
+    color: #fff;
+}
+
+/* FECHAS */
+
+.articulo .fechas{
+    color: #efe102;
+}
+/* RESPONSIVE: MEDIANAS */
+@media screen and (max-width: 768px) {
+    .articulo {
+        width: calc(45% - 20px);
+    }
+}
+
+/* RESPONSIVE: PEQUEÑAS */
+@media screen and (max-width: 480px) {
+    .articulo {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 5vw;
+    }
+
+    p {
+        font-size: 3.5vw;
+    }
+}
+
+/* PANEL GENERAL */
+.panel {
+    width: 89%;
+    height: 75%;
+    background-color: #000;
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    border: 10px solid #a65252;
+}
+
+/* FONDO DE NOVEDADES */
+.fondo {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* TÍTULO PRINCIPAL */
+.titulo-novedades {
+    background: #fff;
+    color: #000;
     text-align: center;
     width: 100%;
-
 }
+
+/* LOGO CEFCE */
 .CEFCE-logo {
-    max-width: 140px; /* Ajusta el tamaño de acuerdo a tus preferencias */
+    max-width: 140px;
     height: auto;
     margin-bottom: 5px;
-    align-items: center;
 }
-img
-{
-    align-items: center;
+.texto-gral{
+    font-family:  Arial, sans-serif;
+    font-size: 16px;
 }
+.portadas{
+    height: 40px;
+   
+    margin-bottom: 5px;
+}
+/*           </div><!--TERMINA ARTICULO-->
+            <div class="contenedor-articulos">
+                <!-- Artículo 5 -->
+                <div class="articulo"><!--EMPIEZA ARTICULO-->
+                    <img width="300px" height="200px" src="../imagenes varias/Copia de PREPARATE.png"
+                        alt="publicidad de las olimpiadas 2024">
+                    <div class="texto-articulo">
+                        <div class="eslogan">
+                            <h3>22/9/2024</h3>
+                        </div>
+                        <h2>OLIMPIADAS 2024</h2>
+                        <p>
+                            Ya se confirmaron los grupos de los deportes la cual estara participando la
+                            facultad de ciencias exactas
+                        </p>
+                    </div>
+                    <a href="deportes.html">
+                        <img src="../imagenes varias/CEFCE-removebg-preview.png" alt="Síguenos en Instagram"
+                            title="Síguenos en Instagram" class="CEFCE-logo">
+                        <a class="eslogan"> enterate de cada grupo en clikeando aquí</a>
+                    </a>
+                </div><!--TERMINA ARTICULO-->
+
+                <!-- Artículo 4 -->
+                <div class="articulo"><!--EMPIEZA ARTICULO-->
+                    <img width="300px" height="200px" src="../imagenes varias/PREPARATE(3).jpg"
+                        alt="publicidad de las olimpiadas 2024">
+                    <div class="texto-articulo">
+                        <div class="eslogan">
+                            <h3>14/9/2024</h3>
+                        </div>
+                        <h2>OLIMPIADAS 2024</h2>
+                        <p>
+                            Ya se siente el ambiente de las olimpiadas, por eso te invitamos a
+                            acercarte a las instalaciones tanto en la ciudad como en el campus para ver y alentar
+                            a Exactas en cada disciplina deportiva, cultural y/o e-game. Pronto publicaremos los
+                            horarios de cada una de estas competencias.
+                        </p>
+                    </div>
+                </div><!--TERMINA ARTICULO-->
+
+
+                <!-- Artículo 2 -->
+                <div class="articulo"><!--EMPIEZA ARTICULO-->
+                    <div class="texto-articulo">
+                        <img src="../imagenes varias/SaveInsta.App_449869726_383455701414868_7836611669213459827_n.jpg"
+                            alt="Descripción de la imagen 3">
+
+                        <div class="eslogan">
+                            <h3>1/7/2024</h3>
+                        </div>
+                        <h2>Exactas En Acción representado a sus votantes en la FUCPBA</h2>
+                        <p>
+                            Este 29 de junio Exactas en Acción representó a sus votantes y al estudiantado en la edición
+                            anual de la Federación Universitaria del Centro de la Provincia de Buenos Aires (FUCPBA).
+                            Estuvieron
+                            presentes Mirko Sollazo y Cristian Ponce como votantes, votando en abstención ya que ExEA no
+                            estuvo de
+                            acuerdo con ninguna lista presentada ese día.
+                        </p>
+                    </div>
+                </div> <!--TERMINA ARTICULO-->
+
+                <!-- Artículo 1 -->
+                <div class="articulo"><!--EMPIEZA ARTICULO-->
+                    <img width="300px" height="200px" src="../imagenes varias/publicidad 1 de exea (2).jpg"
+                        alt="Descripción de la imagen">
+                    <div class="texto-articulo">
+                        <div class="eslogan">
+                            <h3>20/5/2024</h3>
+                        </div>
+                        <h2>ELECCIONES ESTUDIANTILES 2024</h2>
+                        <p>Este es el flyer publicitario para las elecciones estudiantiles 2024.</p>
+                    </div>
+                </div><!--TERMINA ARTICULO-->

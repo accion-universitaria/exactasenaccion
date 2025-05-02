@@ -1,84 +1,79 @@
-
-/* Contenedor del formulario */
-
-/* Estilo básico para la galería */
-.galeria-container {
+.carrusel-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    padding: 15px; /* separador de borde arriba,abajo*/
+    gap: 10px;
+    background: #2e2f2c;
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+    position: relative; /* Añadir esto para posicionar las flechas */
+  }
+  
+  .carrusel {
     width: 100%;
-   
-   
-}
-
-.galeria {
-    display: flex;
-    flex-wrap: nowrap;
+    max-width: 600px;
+    height: auto;
     overflow: hidden;
-}
-
-.slide {
+    position: relative;
+  }
+  
+  .slide {
     display: none;
-
-    width: 600px;
-   
-    height: 600px;
-}
-
-.activo {
+    width: 100%;
+    transition: opacity 0.5s ease;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .slide.activo {
     display: block;
-}
-
-button {
-    cursor: pointer;
-    font-size: 24px;
-    background-color: #333;
-    color: white;
+  }
+  
+  button {
+    background-color: white;
+    color: black;
     border: none;
-    padding: 10px;
-    margin: 0 10px;
-}
-header ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-}
-
-header ul li {
-    display: inline;
-}
-
-header ul li a {
-    text-decoration: none;
-    padding: 10px;
-    background-color: #f0f0f0;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-}
-img
-{
-    align-items: center;
-}
-h2{
-    text-align: center;
-}
-.imagenes
-{
-    max-width: 50%;
-    width: 600px;
-    max-height: 50%;
-
-}
-.fondo {
-    background: #000000; /* Fondo negro */
-    color: rgb(255, 255, 255); /* Color blanco para el texto */
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute; /* Posicionar las flechas de forma absoluta */
+    top: 50%; /* Centrado verticalmente */
+    transform: translateY(-50%); /* Ajuste preciso del centrado */
+    transition: background-color 0.3s;
   }
-  h1 {
-    flex-grow: 1; /* El título ocupa el espacio disponible */
-    text-align: center; /* Asegura que el título esté centrado */
-    font-size: 2.5em; /* Ajusta el tamaño del título */
-    color: #ffffff; /* Color blanco */
-    margin: 0; /* Elimina el margen por defecto */
+  
+  #prev {
+    left: 10px; /* Posicionar la flecha izquierda */
   }
+  
+  #next {
+    right: 10px; /* Posicionar la flecha derecha */
+  }
+  
+  button:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+  }
+  
+  /* Responsive: botones abajo en mobile */
+  @media (max-width: 600px) {
+    .carrusel-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    button {
+      margin-top: 10px;
+      position: relative; /* Asegura que las flechas no estén absolutas en móviles */
+      transform: none; /* Elimina el centrado vertical en móviles */
+    }
+  }
+  

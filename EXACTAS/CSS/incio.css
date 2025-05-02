@@ -1,0 +1,150 @@
+
+  /* Animaciones */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      letter-spacing: 10px;
+    }
+    to {
+      opacity: 1;
+      letter-spacing: 1px;
+    }
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #2e2c2f;
+  }
+  
+  /* Título con animación */
+  .titulo {
+    font-size: 2.2rem;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  
+  .titulo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
+    animation: brilloRapido 2s infinite;
+  }
+  
+  @keyframes brilloRapido {
+    0% { left: -100%; }
+    100% { left: 120%; }
+  }
+  
+  /* Contenedor de logos */
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0;
+  }
+  .logos .exa {
+    width: 276px;
+    height: 183px;
+    margin-right: 20px;
+}
+.logos .au {
+    width: 194px;
+    height: 205px;
+    margin-left: 20px;
+}
+  
+  /* Eslogan */
+  .eslogan {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  
+  /* Animación para el eslogan con brillo */
+  .eslogan {
+    font-size: 1.2rem;
+    color: #efe102;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .eslogan::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+    animation: brillo 3s infinite;
+  }
+  
+  /* Keyframes */
+  @keyframes pulso {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  @keyframes brillo {
+    0% { left: -75%; }
+    100% { left: 125%; }
+  }
+  
+  header, nav,main,footer {
+    width: 100%;
+  }  
+/* GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+   font-family: Arial, sans-serif;
+    
+}
+/* TEXTO PRINCIPAL */
+.texto {
+    font-size: 20px; /* Letra más grande */
+    color: #000;
+    line-height: 1.6;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-top:30px;
+    border: 5px solid #000;
+    margin-top:10px;
+}
+.texto h3{
+    color: #efe102;
+}
+.texto h3:hover{
+ background-color: #000;
+    border-radius: 10px ;
+    width: auto;
+text-align: center;
+}
+b:hover{
+    background-color: #f4ea67;
+ border-radius: 5px #2a2725;
+}
