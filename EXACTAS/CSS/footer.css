@@ -1,0 +1,47 @@
+
+/* FOOTER */
+footer {
+    background-color: #2e2c2f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+footer .au {
+    width: 114px;
+    height: 103px;
+    margin-left: 20px;
+}
+footer .exa {
+    width: 156px;
+    height: 103px;
+    margin-right: 20px;
+}
+/* FOOTER BAR */
+.footer-barra {
+    display: flex;
+    justify-content: center;
+    background-color: #2E2F2C;
+    padding: 15px 0;
+    margin: 30px;
+    list-style: none;
+    transition:0.6s;
+}
+
+.footer-barra li {
+    margin: 0 15px;
+}
+
+.footer-barra a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.footer-barra a:hover {
+    background-color: #efe102;
+    border: 2px solid #000;
+    color: aliceblue;
+    padding-right: 0.5px;
+}
