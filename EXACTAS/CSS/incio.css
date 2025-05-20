@@ -27,7 +27,10 @@
     align-items: center;
     text-align: center;
     padding: 20px;
-    background-color: #2e2c2f;
+ background-image:url(../imagenes/imagen\ 2024\ exea.jpg) ;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Altura completa de la ventana */
   }
   
   /* Título con animación */
@@ -79,13 +82,16 @@
     font-size: 1.2rem;
     font-style: italic;
     margin-top: 10px;
+    justify-content: center;
+    align-items: center;
   }
+  
   
   
   /* Animación para el eslogan con brillo */
   .eslogan {
     font-size: 1.2rem;
-    color: #efe102;
+    color: #000000;
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -98,8 +104,8 @@
     left: -75%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
-    animation: brillo 3s infinite;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: brillo 1s infinite;
   }
   
   /* Keyframes */
@@ -125,21 +131,20 @@ body {
 }
 /* TEXTO PRINCIPAL */
 .texto {
-    font-size: 20px; /* Letra más grande */
-    color: #000;
-    line-height: 1.6;
-    background-color: #ffffff;
-    padding: 20px;
-    box-sizing: border-box;
-    padding-top:30px;
-    border: 5px solid #000;
-    margin-top:10px;
+  max-width: 800px;
+  margin: 40px auto; /* centra horizontalmente y da separación vertical */
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #000000;
 }
+
 .texto h3{
-    color: #efe102;
+    color: #000000;
 }
 .texto h3:hover{
- background-color: #000;
+ background-color: #ffffff;
     border-radius: 10px ;
     width: auto;
 text-align: center;
@@ -148,3 +153,21 @@ b:hover{
     background-color: #f4ea67;
  border-radius: 5px #2a2725;
 }
+@media (min-width: 400px) and (max-width: 1200px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+
+    background-image: url('../imagenes/imagen%202024%20exea.jpg'); /* corregí espacios */
+    background-size: 100% auto; /* adapta al ancho, mantiene proporción vertical */
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    height: 100vh;
+    width: 100%;
+  }
+}
+

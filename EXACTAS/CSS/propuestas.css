@@ -1,79 +1,56 @@
+/* Estilos para el carrusel */
 .carrusel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #2e2f2c;
-    padding: 20px;
-    max-width: 700px;
-    margin: auto;
-    position: relative; /* Añadir esto para posicionar las flechas */
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #2e2f2c;
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+.carrusel {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.slide.activo {
+  display: block;
+}
+
+button {
+  background-color: white;
+  color: black;
   
-  .carrusel {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .slide {
-    display: none;
-    width: 100%;
-    transition: opacity 0.5s ease;
-  }
-  
-  .slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-  
-  .slide.activo {
-    display: block;
-  }
-  
-  button {
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 50%;
-    font-size: 24px;
-    padding: 10px 14px;
-    cursor: pointer;
-    z-index: 10;
-    position: absolute; /* Posicionar las flechas de forma absoluta */
-    top: 50%; /* Centrado verticalmente */
-    transform: translateY(-50%); /* Ajuste preciso del centrado */
-    transition: background-color 0.3s;
-  }
-  
-  #prev {
-    left: 10px; /* Posicionar la flecha izquierda */
-  }
-  
-  #next {
-    right: 10px; /* Posicionar la flecha derecha */
-  }
-  
-  button:hover {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
-  }
-  
-  /* Responsive: botones abajo en mobile */
-  @media (max-width: 600px) {
-    .carrusel-container {
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    button {
-      margin-top: 10px;
-      position: relative; /* Asegura que las flechas no estén absolutas en móviles */
-      transform: none; /* Elimina el centrado vertical en móviles */
-    }
-  }
-  
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}

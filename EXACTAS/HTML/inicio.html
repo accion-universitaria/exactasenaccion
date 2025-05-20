@@ -5,58 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ExactasEnAcción.inicio</title>
-   <meta name="description" content="Somos un grupo de jóvenes liberales en la Facultad de Ciencias Exactas de la UNICEN, comprometidos con la libertad, la acción y el cambio. Conocé nuestras propuestas y novedades.">
-   <link rel="icon" sizes="192x192" href="../imagenes/imagen exea.png">
-   <link rel="stylesheet" href="../CSS/incio.css">
-   <link rel="stylesheet" href="../CSS/header.css">
-   <link rel="stylesheet" href="../CSS/main.css">
-   <link rel="stylesheet" href="../CSS/footer.css">
-   <link rel="stylesheet" href="../CSS/adaptación.css">
+    <meta name="description"
+        content="Somos un grupo de jóvenes liberales en la Facultad de Ciencias Exactas de la UNICEN, comprometidos con la libertad, la acción y el cambio. Conocé nuestras propuestas y novedades.">
+    <link rel="icon" sizes="192x192" href="../imagenes/imagen exea.png">
+    <link rel="stylesheet" href="../CSS/incio.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/adaptación.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
 </head>
+
 <body>
     <header>
-        <div class="encabezado">
-            <div class="encabezado-animado">
-                <section class="hero">
-                    <h1 class="titulo">ExEA - Exactas En Acción</h1>
-                    
-                    <div class="logos">
-                      <img class="exa" src="../imagenes/imagen exea.png" alt="Logo ExEA">
-                      <img class="au" src="../imagenes/au imagen.png" alt="Logo AU">
-                    </div>
-                  
-                    <h3 class="eslogan">"Libertad para pensar... Acción para cambiar"</h3>
-                </section>
-                  
-           </div>
+        <div class="header-contenido">
+            <button id="menu-toggle">☰</button>
+            <a href="../HTML/inicio.html"> <img src="../imagenes/imagen exea.png" alt="Logo" class="logo"></a>
+            <h1 class="titulo">ExEA - Exactas En Acción</h1>
         </div>
-    </header>
-    <main>
-        <nav>
-            <ul class="barra">
-                <li><a href="inicio.html">MENU PRINCIPAL</a></li>
+
+        <nav id="menu" class="menu oculto">
+            <ul>
+                <li><a href="inicio.html">MENÚ PRINCIPAL</a></li>
                 <li><a href="candidatos.html">CANDIDATOS 2025</a></li>
                 <li><a href="propuestas.html">PROPUESTAS 2025</a></li>
                 <li><a href="novedades.html">NOVEDADES 2025</a></li>
-                <li><a href="form.html">UNITE A EXACTAS EN ACCION</a></li>
+                <li><a href="form.html">UNITE A EXACTAS EN ACCIÓN</a></li>
             </ul>
         </nav>
-        <div class="texto">
-            Somos un grupo de jóvenes liberales que en 2024 decidimos presentarnos en el Centro de Estudiantes de la Facultad de Ciencias Exactas de la UNICEN para proponer una alternativa distinta, basada en la libertad, la acción y el compromiso.
-            Desde este espacio vamos a compartir nuestras propuestas, novedades y toda la información relevante para que estés al tanto de lo que hacemos durante el año.     
-            "Libertad para pensar... Acción para cambiar."
+    </header>
+
+    <main>
+        <div class="encabezado">
+            <div class="encabezado-animado">
+                <section class="hero">
+         
+                </section>
+            </div>
+        
         </div>
+        
+        <div class="texto">
+            <h1>¿QUIENES SOMOS?</h1>
+            Somos un grupo de jóvenes liberales que en 2024 decidimos presentarnos en el Centro de Estudiantes de la
+            Facultad de Ciencias Exactas de la UNICEN para proponer una alternativa distinta, basada en la libertad,
+            la acción y el compromiso.  
+            Desde este espacio vamos a compartir nuestras propuestas, novedades y toda la información relevante para
+            que estés al tanto de lo que hacemos durante el año.  
+       </div>
+       <h3 class="eslogan">"Libertad para pensar... Acción para cambiar"</h3>
+     
+    
     </main>
     <footer>
-
         <img class="exa" src="../imagenes/imagen exea.png" alt="">
         <img class="au" src="../imagenes/au imagen.png" alt="">
         <h3> "Libertad para pensar...Accion para cambiar"</h3>
         <ul class="footer-barra">
-            <li><a href="https://www.instagram.com/exactas.enaccion/" target="_blank">Instagram de Exactas en Acción</a></li>
-            <li><a href="https://www.instagram.com/accion.universitaria" target="_blank">Instagram de Acción Universitaria</a></li>
+            <li><a href="https://www.instagram.com/exactas.enaccion/" target="_blank"> Exactas en Acción
+                    <img src="../imagenes/instagram-removebg-preview.png" alt="Logo" class="logo"> </a>
+            </li>
+            <li><a href="https://www.instagram.com/accion.universitaria" target="_blank"> Acción Universitaria
+                    <img src="../imagenes/instagram-removebg-preview.png" alt="Logo" class="logo">
+                </a></li>
         </ul>
     </footer>
+    <script src="../JS/menu.js"></script>
 </body>
 
 </html>
