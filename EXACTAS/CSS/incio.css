@@ -1,26 +1,11 @@
 
-  /* Animaciones */
-  @keyframes slideIn {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      letter-spacing: 10px;
-    }
-    to {
-      opacity: 1;
-      letter-spacing: 1px;
-    }
-  }
+/* GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+   font-family: Arial, sans-serif;
+    
+}
   .hero {
     display: flex;
     flex-direction: column;
@@ -83,21 +68,13 @@
     font-style: italic;
     margin-top: 10px;
     justify-content: center;
-    align-items: center;
+   text-align: center;
   }
   
   
   
   /* Animación para el eslogan con brillo */
-  .eslogan {
-    font-size: 1.2rem;
-    color: #000000;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-  }
-  
-  .eslogan::before {
+   .eslogan::before {
     content: "";
     position: absolute;
     top: 0;
@@ -108,27 +85,11 @@
     animation: brillo 1s infinite;
   }
   
-  /* Keyframes */
-  @keyframes pulso {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-  
-  @keyframes brillo {
-    0% { left: -75%; }
-    100% { left: 125%; }
-  }
-  
+
   header, nav,main,footer {
     width: 100%;
   }  
-/* GENERAL */
-body {
-    margin: 0;
-    padding: 0;
-   font-family: Arial, sans-serif;
-    
-}
+
 /* TEXTO PRINCIPAL */
 .texto {
   max-width: 800px;
@@ -140,19 +101,44 @@ body {
   color: #000000;
 }
 
-.texto h3{
-    color: #000000;
+.texto, .eslogan {
+  background-color: #efe102; 
+  border-radius: 10px;
+  width: auto;
+  transition: background-color 0.3s ease; /* Para suavizar el cambio de color */
 }
-.texto h3:hover{
- background-color: #ffffff;
-    border-radius: 10px ;
-    width: auto;
-text-align: center;
+
+.texto:hover, .eslogan:hover {
+  background-color: #f0f0f0; /* Cambio de color de fondo en hover */
 }
+
 b:hover{
     background-color: #f4ea67;
  border-radius: 5px #2a2725;
 }
+
+  /* Animaciones */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      letter-spacing: 10px;
+    }
+    to {
+      opacity: 1;
+      letter-spacing: 1px;
+    }
+  }
 @media (min-width: 400px) and (max-width: 1200px) {
   .hero {
     display: flex;
@@ -170,4 +156,14 @@ b:hover{
     width: 100%;
   }
 }
-
+  /* Keyframes */
+  @keyframes pulso {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  @keyframes brillo {
+    0% { left: -75%; }
+    100% { left: 125%; }
+  }
+  
