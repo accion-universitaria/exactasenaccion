@@ -1,3 +1,27 @@
+/* Aplica Montserrat como fuente principal */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo para títulos grandes */
+h1, h2 {
+  font-weight: 700; /* Bold */
+  letter-spacing: 1px;
+}
+
+/* Subtítulos o textos destacados */
+h3, h4 {
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Texto normal */
+p, li, span {
+  font-weight: 400; /* Regular */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
 /* Estilo base: mobile first (desde 320px) */
 .contenedor-articulos {
   display: grid;
