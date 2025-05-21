@@ -38,11 +38,7 @@ body {
     animation: brilloRapido 2s infinite;
   }
   
-  @keyframes brilloRapido {
-    0% { left: -100%; }
-    100% { left: 120%; }
-  }
-  
+ 
   /* Contenedor de logos */
   .logos {
     display: flex;
@@ -162,8 +158,10 @@ b:hover{
     50% { transform: scale(1.05); }
   }
   
-  @keyframes brillo {
-    0% { left: -75%; }
-    100% { left: 125%; }
+
+  
+ @keyframes brilloRapido {
+    0% { left: -100%; }
+    100% { left: 120%; }
   }
   
