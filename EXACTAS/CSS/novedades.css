@@ -11,74 +11,108 @@ header, nav, main, footer {
 /* GENERAL */
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    padding: 0; 
     background-color: #111;
-    color: #fff;
 }
 
-/* CONTENEDOR PRINCIPAL EN GRID */
+/* CONTENEDOR PRINCIPAL */
 .contenedor-articulos {
     margin: 20px auto;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
 }
+
+/* ARTÍCULO INDIVIDUAL */
 .articulo {
     background-color: #000;
     color: #fff;
     border: 5px solid #fff;
-    padding: 1%;
-    overflow: hidden;         /* evita que se salga del contenedor */
+    padding: 1rem;
+    overflow: hidden;
     border-radius: 10px;
-    height: auto;             /* se adapta al contenido */
-    max-width: 100%;          /* se queda dentro del grid */
-    word-wrap: break-word;    /* evita desbordes por palabras largas */
-}
-
-
-
-
-/* IMÁGENES AJUSTADAS */
-.portadas {
+    width: 100%;
     display: flex;
-    object-fit: cover;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    width: 20%;
-    height: 30%;
-    margin-left: 50%;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-/* TEXTO COMPACTO */
+/* TEXTO */
 .texto-articulo {
+    flex: 1 1 300px;
     text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-/* Asegurar que el texto no esté limitado */
-.texto-gral {
-    font-size: 1rem;
-    line-height: 1.4;
-    max-height: none;         /* sin límite de alto */
-    overflow: visible;        /* no oculta contenido */
-    text-overflow: unset;     /* sin puntos suspensivos */
-    white-space: normal;      /* permite saltos de línea */
+.marquesina {
+  display: inline-block;
+  white-space: nowrap;
+  animation: desplazamiento-horizontal 25s linear infinite;
 }
 
+.texto-noticia {
+  width: 100%; /* Asegura que ocupe todo el contenedor negro */
+  overflow: hidden; /* Oculta el texto que se desborda al comienzo y final */
+  position: relative;
+}
+
+
+/* IMÁGENES */
+ .portadas {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+   align-items: center;
+}
+
+.CEFCE-logo{
+    width: 120px;
+}
+
+/* ENCABEZADOS */
 h1, h2 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 4px;
     color: #fff;
 }
 
 h4.titulo-novedades {
-    font-size: 13px;
+    font-size: 14px;
     color: #b1a6a6;
     margin-bottom: 5px;
 }
 
 .fechas {
-    font-size: 11px;
+    font-size: 12px;
     color: #efe102;
-    margin-bottom: 3px;
+    margin-bottom: 6px;
 }
 
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .articulo {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .CEFCE-logo, .portadas {
+        width: 80px;
+    }
+
+    .texto-articulo {
+        text-align: left;
+    }
+}
+/* Animación */
+@keyframes desplazamiento-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

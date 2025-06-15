@@ -7,6 +7,7 @@
     <title>ExactasEnAcción-Novedades</title>
     <link rel="icon" sizes="192x192" href="../imagenes/imagen exea.png">
     <link rel="stylesheet" href="../CSS/novedades.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/footer.css">
@@ -17,14 +18,23 @@
 </head>
 
 <body>
-    <header>
-        <div class="encabezado">
-            <h1>ExEA-ExactasEnAcción</h1>
-            <img class="exa" src="../imagenes/imagen exea.png" alt="IMAGEN DE ExEA">
-            <img class="au" src="../imagenes/au imagen.png" alt="IMAGEN DE ACCIÓN UNIVERSITARIA">
-            <h3> "Libertad para pensar...Accion para cambiar"</h3>
+      <header>
+        <div class="header-contenido">
+            <button id="menu-toggle">☰</button>
+            <a class="logos" href="../HTML/inicio.html"> <img src="../imagenes/ExEA.png" alt="Logo" ></a>
+            <h1 class="titulo">ExEA - Exactas En Acción</h1>
         </div>
+        <nav id="menu" class="menu oculto">
+            <ul>
+                <li><a href="inicio.html">MENÚ PRINCIPAL</a></li>
+                <li><a href="candidatos.html">CANDIDATOS 2025</a></li>
+                <li><a href="propuestas.html">PROPUESTAS 2025</a></li>
+                <li><a href="novedades.html">NOVEDADES 2025</a></li>
+                <li><a href="form.html">UNITE A EXACTAS EN ACCIÓN</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
         <nav>
             <ul class="barra">
@@ -44,7 +54,7 @@
                         <h3 class="fechas">01/10/2024</h3>
                     </div>
                     <h2>INGRESO 2025</h2>
-                    <p class="texto-gral">
+                    <p class="texto-noticia">
                         El ingreso a la Facultad de Ciencias Exactas empezará el día 6 de febrero con fecha de
                         inscripción habilitada del 29 de noviembre del 2024 al 31 de enero de 2025.
                         En esta publicación están las carreras de grado que ofrece la facultad:
@@ -59,39 +69,83 @@
             <!-- Artículo 2 -->
             <div class="articulo">
                 <div class="texto-articulo">
-                    <img class="portadas" src="../imagenes/texto au.webp" alt="">
                     <div class="fecha-articulo">
-                        <h3 class="fechas">25/09/2024</h3>
+                        <h3 class="fechas">07/03/2025</h3>
                     </div>
-                    <h1>ACCIÓN UNIVERSITARIA</h1>
-                    <h4 class="titulo-novedades">Hay nuevo espacio para la FUCPBA 2025</h4>
-                    <p class="texto-gral">
-                        💪 Somos Acción Universitaria, un espacio de jóvenes liberales que estudiamos en la UNICEN y
-                        decidimos organizarnos e involucrarnos para mejorar la vida académica en nuestra universidad.
-                        Nacimos el año pasado impulsados por las ganas de involucrarnos en la vida política de la UNICEN
-                        y por las ganas de llevar la batalla cultural que libramos en la ciudad, a una universidad que
-                        amamos pero que sabemos que puede estar mucho mejor.
-                        Con muchas ideas, proyectos y ganas de acompañarte a vos, estudiante, en esta importante
-                        etapa.📢 Somos parte de Jóvenes en Acción (@juventud.enaccion), un espacio de jóvenes liberales
-                        que defendemos las ideas de la libertad y del vecinalismo.
-                        Es así que decidimos llevar nuestras ideas, proyectos y convicciones a la universidad.🏛️
-                        Somos estudiantes comprometidos y soñamos con una universidad pública de calidad, no arancelada,
-                        auditada y que respete todas las ideologías, sin ningún tipo de adoctrinamiento en las aulas.
-                        Sabemos que para lograr ese objetivo, hay que involucrarse. Por eso: ¡Libertad para pensar y
-                        acción para cambiar! 📚🫡
-                        #AcciónUniversitaria
-                   </p>
+                        <h1>ACCIÓN UNIVERSITARIA</h1>
+                        <h4 class="titulo-novedades">Hay nuevo espacio para la FUCPBA 2025</h4>
+                        <p class="texto-noticia">
+                            💪 Somos Acción Universitaria, un espacio de jóvenes liberales que estudiamos en la UNICEN y
+                            decidimos organizarnos e involucrarnos para mejorar la vida académica en nuestra universidad.
+                            Nacimos el año pasado impulsados por las ganas de involucrarnos en la vida política de la UNICEN
+                            y por las ganas de llevar la batalla cultural que libramos en la ciudad, a una universidad que
+                            amamos pero que sabemos que puede estar mucho mejor.
+                            Con muchas ideas, proyectos y ganas de acompañarte a vos, estudiante, en esta importante
+                            etapa.
+                            📢 Somos parte de Jóvenes en Acción (@juventud.enaccion), un espacio de jóvenes liberales
+                            que defendemos las ideas de la libertad y del vecinalismo.
+                            Es así que decidimos llevar nuestras ideas, proyectos y convicciones a la universidad.
+                            🏛️Somos estudiantes comprometidos y soñamos con una universidad pública de calidad, no arancelada,
+                            auditada y que respete todas las ideologías, sin ningún tipo de adoctrinamiento en las aulas.
+                            Sabemos que para lograr ese objetivo, hay que involucrarse.
+                            Por eso: ¡Libertad para pensar...Acción para cambiar! 📚🫡
+                            #AcciónUniversitaria
+                    </p>
                    
+                        <a href="https://www.instagram.com/p/DG6ozYTy9dm/"><img class="portadas" src="../imagenes/au.png" alt="logo">publicacion</a>
                 </div>
-            </div>
- 
-                <div class="articulo">
+                    </div>
+                    <div class="articulo">
+                        <div class="texto-articulo">
+                            <div class="fecha-articulo">
+                                <h3 class="fechas">07/06/2025</h3>
+                            </div>
+                            <h2>Elecciones 2025</h2>
+                            <img src="../imagenes/EXEA publi.png" alt="publicación de Elecciones 2025"
+                                class="portadas">
+                                <p class="texto-noticia"> se acercan las Elecciones 2025 y desde Exactas en Acción estamos
+                                    trabajando para que el Centro de Estudiantes sea un espacio de todos los estudiantes, donde
+                                    se escuchen todas las voces y se respeten todas las opiniones.
+                                    Queremos que el CEFCE sea un lugar donde se fomente la participación activa de los
+                                    estudiantes, donde se promueva la libertad de pensamiento y se respete la diversidad de
+                                    ideas.
+                                    Estamos comprometidos a trabajar por una facultad más inclusiva, más participativa y más
+                                    democrática. ¡Juntos podemos lograrlo!
+                                    <a href="https://www.instagram.com/p/DKiI5FuxaGA/?img_index=1">PUBLICACIÓN</a>
+                                </p>  <img class="CEFCE-logo" src="../imagenes/cefce logo fondo gris.png" alt="Síguenos en Instagram"
+                            title="Síguenos en Instagram">
+                        </div> 
+                    </div> 
+                         <div class="articulo">
+                        <div class="texto-articulo">
+                            <div class="fecha-articulo">
+                                <h3 class="fechas">14/06/2025</h3>
+                            </div>
+                            <h2>Elecciones 2025</h2>
+                            <img src="../imagenes/2025/resultados votos elecciones 2025 exactas.jpg" alt="publicación de Elecciones 2025"
+                                class="portadas">
+                                <p class="texto-noticia"> 
+                                 🗳️ Desde Exactas en Acción, celebramos con enorme orgullo los avances que logramos en esta segunda elección en la facultad. Gracias al apoyo de cientos de estudiantes, aumentamos mucho nuestros votos respecto al año pasado y obtuvimos tres secretarías en el Centro de Estudiantes. Además, logramos ingresar un consejero académico al cogobierno de la facultad: Cristian Ponce (@cristian.r.p11).
+                                 📈 En 2024 dimos nuestro primer paso con 208 votos. Este año, llegamos a 366. Ese crecimiento nos llena de fuerza para seguir construyendo una alternativa sólida, con ideas claras, compromiso real y muchas ganas de transformar la facultad.
+                                 🙏 Gracias a cada estudiante que confió en nosotros. Vamos a representar con responsabilidad, firmeza y convicción nuestros valores.
+                                 👏 Felicitamos a AMU por el triunfo y les deseamos un gran año de gestión. Como siempre, vamos a trabajar con respeto y compromiso por el bienestar de todos los estudiantes de Exactas.
+                                 💛 Esto no termina acá. Somos Exactas en Acción.
+                                LIBERTAD PARA PENSAR, ACCIÓN PARA CAMBIAR.
+
+                                    #SomosExEA
+                                    #accionuniversitaria
+
+                                    <a href="https://www.instagram.com/p/DK7CRh_xIgt/">PUBLICACIÓN </a>
+                                </p> 
+                        </div> 
+                    </div> 
+         <!--       <div class="articulo">
                     <div class="texto-articulo">
                         <div class="fecha-articulo">
                             <h3 class="fechas">03/04/2025</h3>
                         </div>
                         <h2>INGRESO 2025</h2>
-                        <p class="texto-gral">
+                        <p class="texto-noticia">
                            <a
                                 href="http://www.instagram.com/p/DDYN5hGJHGv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">PUBLICACIÓN</a>
                         </p>
@@ -105,7 +159,7 @@
                             <h3 class="fechas">03/04/2025</h3>
                         </div>
                         <h2>INGRESO 2025</h2>
-                        <p class="texto-gral">
+                        <p class="texto-noticia">
                            <a
                                 href="http://www.instagram.com/p/DDYN5hGJHGv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">PUBLICACIÓN</a>
                         </p>
@@ -119,43 +173,31 @@
                             <h3 class="fechas">03/04/2025</h3>
                         </div>
                         <h2>INGRESO 2025</h2>
-                        <p class="texto-gral">
+                        <p class="texto-noticia">
                            <a
                                 href="http://www.instagram.com/p/DDYN5hGJHGv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">PUBLICACIÓN</a>
                         </p>
                     </div>
                     <img class="CEFCE-logo" src="../imagenes varias/CEFCE-removebg-preview.png" alt="Síguenos en Instagram"
                         title="Síguenos en Instagram">
-                </div>
-                <div class="articulo">
-                    <div class="texto-articulo">
-                        <div class="fecha-articulo">
-                            <h3 class="fechas">03/04/2025</h3>
-                        </div>
-                        <h2>INGRESO 2025</h2>
-                        <p class="texto-gral">
-                           <a
-                                href="http://www.instagram.com/p/DDYN5hGJHGv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">PUBLICACIÓN</a>
-                        </p>
-                    </div>
-                    <img class="CEFCE-logo" src="../imagenes varias/CEFCE-removebg-preview.png" alt="Síguenos en Instagram"
-                        title="Síguenos en Instagram">
-                </div> 
+                </div> -->
 
         </div>
     </main>
-    <footer>
+        <footer>
 
-        <img class="exa" src="../imagenes/imagen exea.png" alt="">
-        <img class="au" src="../imagenes/au imagen.png" alt="">
-        <h3> "Libertad para pensar...Accion para cambiar"</h3>
-        <ul class="footer-barra">
-            <li><a href="https://www.instagram.com/tucuenta" target="_blank">Instagram de Exactas en Acción</a></li>
-            <li><a href="https://www.instagram.com/tucuenta" target="_blank">Instagram de Acción Universitaria</a></li>
-        </ul>
-    </footer>
-    <script src="../JS/novedades.js"></script>
-    <script src="../JS/fechas.js"></script>
+            <img class="exa" src="../imagenes/imagen exea.png" alt="">
+            <img class="au" src="../imagenes/au imagen.png" alt="">
+            <h3> "Libertad para pensar...Accion para cambiar"</h3>
+            <ul class="footer-barra">
+                <li><a href="https://www.instagram.com/exactas.enaccion" target="_blank">Instagram de Exactas en Acción</a></li>
+                <li><a href="https://www.instagram.com/accion.universitaria" target="_blank">Instagram de Acción Universitaria</a></li>    
+
+        </footer>
+        <script src="../JS/menu.js"></script>
+        <script src="../JS/T.letra.js"></script>
+        <script src="../JS/novedades.js"></script>
+        <script src="../JS/fechas.js"></script>
 </body>
 
 </html>

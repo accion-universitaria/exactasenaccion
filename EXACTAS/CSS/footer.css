@@ -6,27 +6,24 @@ footer {
     text-align: center;
     padding: 20px;
 }
-footer .au {
-    width: 114px;
-    height: 103px;
-    margin-left: 20px;
-}
-footer .exa {
-    width: 156px;
-    height: 103px;
-    margin-right: 20px;
+.logo-footer {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
 }
 /* FOOTER BAR */
 .footer-barra {
     display: flex;
     justify-content: center;
-    background-color: #2E2F2C;
+    background-color: #2e2f2c;
     padding: 15px 0;
     margin: 30px;
     list-style: none;
     transition:0.6s;
 }
-
+.footer-barra img{
+    width: 70px;
+}
 .footer-barra li {
     margin: 0 15px;
 }
@@ -35,13 +32,12 @@ footer .exa {
     color: #000;
     font-weight: bold;
     text-decoration: none;
-    padding: 5px 10px;
     border-radius: 5px;
     transition: 0.3s;
 }
 .footer-barra a:hover {
     background-color: #efe102;
-    border: 2px solid #000;
-    color: aliceblue;
+    border: 2px solid #e6e5e5;
+    color: rgb(0, 0, 0);
     padding-right: 0.5px;
 }

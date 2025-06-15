@@ -1,6 +1,6 @@
 main {
     background-color: #efe102;
-    max-width: 100%; /* Ancho fijo */
+    max-width: auto; /* Ancho fijo */
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -36,4 +36,16 @@ main {
     border-radius: 15px; /* esquinas redondeadas opcionales */
     transition: 0.9s; /* animación suave */
     border: 5px solid #000000;
+}
+/* ENCABEZADO */
+ .encabezado .hero {
+    height: 200px;
+    text-align: center;
+  margin: 30px;
+    background-image: url(../imagenes/imagen\ 2024\ exea.jpg); /* Imagen de fondo */
+  }
+@media (width>=600px) {
+    .encabezado .hero{
+        height: 400px;
+    }
 }

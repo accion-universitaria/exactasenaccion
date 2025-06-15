@@ -1,76 +1,41 @@
-
 /* GENERAL */
 body {
     margin: 0;
     padding: 0;
-   font-family: Arial, sans-serif;
-    
 }
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
- background-image:url(../imagenes/imagen\ 2024\ exea.jpg) ;
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Altura completa de la ventana */
-  }
-  
-  /* Título con animación */
-  .titulo {
-    font-size: 2.2rem;
+
+
+/* TÍTULO */
+.titulo {
+    font-size: 2rem;
     position: relative;
     overflow: hidden;
     color: #ffffff;
     margin-bottom: 15px;
-  }
-  
-  .titulo::before {
+}
+
+.titulo::before  { 
     content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9), transparent);
     animation: brilloRapido 2s infinite;
-  }
-  
- 
-  /* Contenedor de logos */
-  .logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 10px 0;
-  }
-  .logos .exa {
-    width: 276px;
-    height: 183px;
-    margin-right: 20px;
-}
-.logos .au {
-    width: 194px;
-    height: 205px;
-    margin-left: 20px;
-}
-  
-  /* Eslogan */
-  .eslogan {
+} 
+
+
+/* ESLOGAN */
+.eslogan {
     font-size: 1.2rem;
     font-style: italic;
     margin-top: 10px;
-    justify-content: center;
-   text-align: center;
-  }
-  
-  
-  
-  /* Animación para el eslogan con brillo */
-   .eslogan::before {
+    text-align: center;
+    color: #fff;
+}
+
+.eslogan::before {
     content: "";
     position: absolute;
     top: 0;
@@ -79,89 +44,39 @@ body {
     height: 100%;
     background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
     animation: brillo 1s infinite;
-  }
-  
+}
 
-  header, nav,main,footer {
-    width: 100%;
-  }  
-
-/* TEXTO PRINCIPAL */
+/* CONTENIDO PRINCIPAL */
 .texto {
-  max-width: 800px;
-  margin: 40px auto; /* centra horizontalmente y da separación vertical */
-  padding: 20px;
-  text-align: center;
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #000000;
-}
-
-.texto, .eslogan {
-  background-color: #efe102; 
-  border-radius: 10px;
-  width: auto;
-  transition: background-color 0.3s ease; /* Para suavizar el cambio de color */
-}
-
-.texto:hover, .eslogan:hover {
-  background-color: #f0f0f0; /* Cambio de color de fondo en hover */
-}
-
-b:hover{
-    background-color: #f4ea67;
- border-radius: 5px #2a2725;
-}
-
-  /* Animaciones */
-  @keyframes slideIn {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      letter-spacing: 10px;
-    }
-    to {
-      opacity: 1;
-      letter-spacing: 1px;
-    }
-  }
-@media (min-width: 400px) and (max-width: 1200px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
     text-align: center;
-    padding: 10px;
-
-    background-image: url('../imagenes/imagen%202024%20exea.jpg'); /* corregí espacios */
-    background-size: 100% auto; /* adapta al ancho, mantiene proporción vertical */
-    background-repeat: no-repeat;
-    background-position: center top;
-
-    height: 100vh;
-    width: 100%;
-  }
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #000;
+    background-color: #efe102;
+    border-radius: 10px;
 }
-  /* Keyframes */
-  @keyframes pulso {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-  
 
-  
- @keyframes brilloRapido {
-    0% { left: -100%; }
-    100% { left: 120%; }
-  }
-  
+
+/* ANIMACIONES */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes brilloRapido {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 120%;
+    }
+}
