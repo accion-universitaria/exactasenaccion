@@ -32,10 +32,9 @@ async function enviarFormulario(e) {
 
     if (!respuesta.ok) throw new Error(`Error: ${respuesta.status}`);
 
-    alert('Formulario enviado con éxito.');
+   
     e.target.reset();
   } catch (error) {
     console.error('Error al enviar el formulario:', error);
-    alert('Ocurrió un error al enviar los datos.');
   }
 }
