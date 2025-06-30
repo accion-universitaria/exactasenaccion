@@ -35,7 +35,7 @@ footer {
     border-radius: 5px;
     transition: 0.3s;
 }
-.footer-barra a:hover {
+/*.footer-barra a:hover {
     background-color: #efe102;
     border: 2px solid #e6e5e5;
     color: rgb(0, 0, 0);

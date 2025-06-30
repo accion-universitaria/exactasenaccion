@@ -7,12 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/form.css">
     <link rel="stylesheet" href="../CSS/menu.css">
-       <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/incio.css">
     <link rel="stylesheet" href="../CSS/adaptación.css">
- 
     <link rel="stylesheet" href="../CSS/footer.css">
+
 </head>
 
 <body>
@@ -33,25 +33,39 @@
         </nav>
     </header>
     <main>
-        <iframe class="formulario"
-                    title="Formulario para ser parte de  Exactas en Acción"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfDAlj6mlVAk3_NhEcV6kQ2iUenjDiGIm-REydVQrrbJ73ABw/viewform?embedded=true" >Loading…
-        </iframe>
+        <h2>UNITE A EXACTAS EN ACCIÓN</h2>
+        <form class="formContacto" id="formContacto">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+            <input type="tel" id="numerodetelefono" name="numerodetelefono" placeholder="Teléfono" required>
+            <input type="datetime" name="fechadenacimiento" id="fechadenacimiento" placeholder="Fecha de Nacimiento"
+                required>
+            <input type="text" id="carrera" name="carrera" placeholder="Carrera" required>
+            <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </main>
 
     <footer>
         <div class="logos-footer">
-        <img class="logo" src="../imagenes/imagen exea.jpg" alt="Logo ExEA">
-        <img class="logo" src="../imagenes/imagen au.jpg" alt="Logo AU">
-        </div>
+            <ul class="footer-barra">
+                <li>
+                    <a href="https://www.instagram.com/exactas.enaccion/" target="_blank">
+                        <img class="logo" src="../imagenes/ExEA.png" alt="Logo ExEA">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/accion.universitaria" target="_blank">
+                        <img class="logo" src="../imagenes/au.png" alt="Logo AU">
+                    </a>
+                </li>
+            </ul>
         </div>
         <h3>"Libertad para pensar...Acción para cambiar"</h3>
-        <ul class="footer-barra">
-            <li> <a href="https://www.instagram.com/exactas.enaccion/" target="_blank">Exactas en Acción <img src="../imagenes/instagram-removebg-preview.png" alt="Logo"> </a></li>
-            <li><a href="https://www.instagram.com/accion.universitaria" target="_blank">Acción Universitaria <img src="../imagenes/instagram-removebg-preview.png" alt="Logo"></a></li>
-        </ul>
     </footer>
+
     <script src="../JS/menu.js"></script>
+    <script src="../JS/formdatos.js"></script>
 </body>
 
 </html>

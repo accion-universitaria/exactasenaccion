@@ -1,6 +1,5 @@
 main {
     background-color: #efe102;
-    max-width: auto; /* Ancho fijo */
     margin: 0 auto;
     padding: 20px;
     display: flex;
