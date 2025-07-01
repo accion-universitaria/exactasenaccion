@@ -41,8 +41,7 @@ main {
     height: 200px;
     text-align: center;
   margin: 30px;
-    background-image: url(../imagenes
-    ); /* Imagen de fondo */
+    background-image: url(../imagenes/imagen\ 2024\ exea.jpg); /* Imagen de fondo */
   }
 @media (width>=600px) {
     .encabezado .hero{

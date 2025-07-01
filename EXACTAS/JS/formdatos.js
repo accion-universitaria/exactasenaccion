@@ -1,4 +1,4 @@
-const URL_API = 'https://685c8a5a769de2bf085d00c1.mockapi.io/exactas'; // Reemplazá con tu endpoint real
+const URL_API = 'https://68633ffc88359a373e944034.mockapi.io/Exactas';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('formContacto');
@@ -13,6 +13,7 @@ async function enviarFormulario(e) {
     apellido: document.getElementById('apellido').value.trim(),
     numerodetelefono: document.getElementById('numerodetelefono').value.trim(),
     fechadenacimiento: document.getElementById('fechadenacimiento').value.trim(),
+    correoelectronico: document.getElementById('correoelectronico').value.trim(),
     carrera: document.getElementById('carrera').value.trim(),
     mensaje: document.getElementById('mensaje').value.trim()
   };

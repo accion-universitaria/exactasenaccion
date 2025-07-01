@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ExEA-ExactasEnAcción/formulariodecontacto</title>
     <link rel="stylesheet" href="../CSS/form.css">
     <link rel="stylesheet" href="../CSS/menu.css">
     <link rel="stylesheet" href="../CSS/main.css">
@@ -17,8 +17,9 @@
 
 <body>
     <header>
+         
         <div class="header-contenido">
-            <button id="menu-toggle">☰</button>
+               <button id="menu-toggle">☰</button>
             <a class="logos" href="../HTML/inicio.html"> <img src="../imagenes/ExEA.png" alt="Logo"></a>
             <h1 class="titulo">ExEA - Exactas En Acción</h1>
         </div>
@@ -33,15 +34,18 @@
         </nav>
     </header>
     <main>
-        <h2>UNITE A EXACTAS EN ACCIÓN</h2>
+        <h2 class="tituloform" >UNITE A EXACTAS EN ACCIÓN</h2>
         <form class="formContacto" id="formContacto">
+            <div class="inicio">
             <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
-            <input type="tel" id="numerodetelefono" name="numerodetelefono" placeholder="Teléfono" required>
+            </div>
+            <input type="number" id="numerodetelefono" name="numerodetelefono" placeholder="Teléfono" required>
             <input type="date" name="fechadenacimiento" id="fechadenacimiento" placeholder="Fecha de Nacimiento"
                 required>
+                <input type="email" name="correoelectronico " id="correoelectronico" placeholder="Correo Electrónico">
             <input type="text" id="carrera" name="carrera" placeholder="Carrera" required>
-            <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+            <textarea id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
             <button type="submit">Enviar</button>
         </form>
     </main>
@@ -66,6 +70,7 @@
 
     <script src="../JS/menu.js"></script>
     <script src="../JS/formdatos.js"></script>
+
 </body>
 
 </html>

@@ -47,3 +47,14 @@
 .formContacto button:hover {
   background: linear-gradient(to right, #2a9833, #1e723e);
 }
+.inicio{
+  display: flex;
+  flex-direction:row;
+  gap: 10px;
+}
+.tituloform {
+  text-align: center;
+  color: #0d0d0e;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
