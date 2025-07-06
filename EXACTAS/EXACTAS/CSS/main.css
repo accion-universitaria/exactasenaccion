@@ -1,0 +1,71 @@
+:root {
+  --color-principal: #efe102;
+  --color-fondo-navbar: #ffffff;
+  --color-texto-navbar: #000;
+  --color-hover: #efe102;
+  --borde-hover: 5px solid #000;
+  --radio-hover: 15px;
+  --padding-hover: 5px 10px;
+  --alto-hero-mobile: 200px;
+  --alto-hero-desktop: 400px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+  background-color: var(--color-principal);
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+.barra {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--color-fondo-navbar);
+  padding: 15px 0;
+  margin: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.barra li {
+  list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.barra a {
+  color: var(--color-texto-navbar);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.barra a:hover {
+  background-color: var(--color-hover);
+  color: var(--color-texto-navbar);
+  padding: var(--padding-hover);
+  border-radius: var(--radio-hover);
+  border: var(--borde-hover);
+}
+
+/* HERO / ENCABEZADO */
+.encabezado .hero {
+  height: var(--alto-hero-mobile);
+  margin: 30px;
+  text-align: center;
+  background-image: url(../imagenes/imagen\ 2024\ exea.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 600px) {
+  .encabezado .hero {
+    height: var(--alto-hero-desktop);
+  }
+}

@@ -1,0 +1,107 @@
+/* Aplica Montserrat como fuente principal */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo para títulos grandes */
+h1, h2 {
+  font-weight: 700; /* Bold */
+  letter-spacing: 1px;
+}
+
+/* Subtítulos o textos destacados */
+h3, h4 {
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Texto normal */
+p, li, span {
+  font-weight: 400; /* Regular */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+/* Estilo base: mobile first (desde 320px) */
+.contenedor-articulos {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 noticia por fila */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.titulo {
+  font-size: 1.6rem;
+}
+.eslogan {
+  font-size: 1rem;
+}
+.barra {
+  flex-direction: row;
+  align-items: center;
+}
+.barra li {
+  margin: 10px 0;
+}
+
+.texto {
+  font-size: 18px;
+  padding: 15px;
+}
+
+.header-contenido {
+  display: flex;
+  align-items: center;
+  background-color: #252326;
+  padding: 10px 20px;
+  gap: 15px; /* espacio entre elementos */
+}
+
+.articulo {
+  height: 400px;
+}
+
+.texto-noticia {
+min-width: 300px;
+}
+
+/* Para tablets (768px hacia arriba hasta 1024) */
+@media (width>= 768px) {
+    .barra {
+      flex-direction: row;
+      align-items: center;
+    }
+    .footer-barra {
+      flex-direction:row;
+    }
+    .contenedor-articulos {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .articulo {
+      height: 400px;
+  }
+
+  .texto-noticia {
+      font-size: 20px;
+  }
+  }
+  
+/* MEDIA QUERIES - Adaptaciones para pantallas mayores */
+@media (min-width: 600px) {
+    .titulo {
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        background-size: cover;
+        padding: 40px;
+    }
+
+    .texto {
+        font-size: 1.2em;
+        margin: 50px auto;
+    }
+}  
