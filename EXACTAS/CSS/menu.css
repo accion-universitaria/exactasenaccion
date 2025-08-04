@@ -1,13 +1,24 @@
+:root {
+  --color-fondo-menu: #ffffff;
+  --color-borde-menu: yellow;
+  --color-texto-menu: #000;
+  --color-toggle: #ffffff;
+  --alto-logo: 60px;
+  --tamano-toggle: 32px;
+  --ancho-toggle: 40px;
+  --alto-toggle: 60px;
+}
 
+/* BOTÓN DE MENÚ (HAMBURGUESA) */
 #menu-toggle {
   background: none;
   border: none;
-  color: white;
+  color: var(--color-toggle);
   cursor: pointer;
-  font-size: 32px;
+  font-size: var(--tamano-toggle);
   line-height: 1;
-  height: 60px;
-  width: 40px;
+  height: var(--alto-toggle);
+  width: var(--ancho-toggle);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,24 +26,28 @@
   margin: 0;
 }
 
+/* LOGO */
 .logo {
-  height: 60px;
+  height: var(--alto-logo);
   width: auto;
 }
 
+/* TÍTULO */
 .titulo {
-  color: white;
+  color: var(--color-toggle);
   font-size: 24px;
   margin: 0;
   white-space: nowrap;
 }
 
+/* MENÚ DESPLEGABLE */
 .menu {
-  background-color: white;
+  background-color: var(--color-fondo-menu);
   padding: 10px 0;
-  border-bottom: 5px solid yellow;
+  border-bottom: 5px solid var(--color-borde-menu);
 }
 
+/* LISTA DEL MENÚ */
 .menu ul {
   list-style: none;
   padding: 0;
@@ -40,14 +55,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 10px;
 }
 
+/* ENLACES DEL MENÚ */
 .menu ul li a {
-  color: black;
+  color: var(--color-texto-menu);
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
+.menu ul li a:hover {
+  color: var(--color-texto-menu);
+  background-color: var(--color-borde-menu);
+  border: #000 solid 2px;
+}
+
+/* CLASES PARA VISIBILIDAD DEL MENÚ */
 .oculto {
   display: none;
 }

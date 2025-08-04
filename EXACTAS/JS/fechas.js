@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Ordenar los artículos por fecha de forma descendente (de más reciente a más antigua)
     articulosArray.sort(function (a, b) {
-        const fechaA = a.querySelector('.eslogan h3').textContent.trim();
-        const fechaB = b.querySelector('.eslogan h3').textContent.trim();
+        const fechaA = a.querySelector('.fechas').textContent.trim();
+        const fechaB = b.querySelector('.fechas').textContent.trim();
 
         const dateA = convertirFecha(fechaA);
         const dateB = convertirFecha(fechaB);

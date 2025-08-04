@@ -1,25 +1,49 @@
+:root {
+  --altura-header: 100px;
+  --color-icono: #f3ebeb;
+  --tamano-icono: 24px;
+  --espacio-logo-titulo: 10px;
+  --altura-logo: 55px;
+  --fuente-titulo-header: 1.5rem;
+}
+
+/* CONTENEDOR DEL HEADER */
 .header-contenido {
   position: relative;
   display: flex;
-  justify-content: center;  /* centramos horizontalmente el contenido principal */
-  align-items: center;      /* centramos verticalmente */
-  height: 100px;            /* o el alto que quieras */
+  justify-content: center;
+  align-items: center;
+  height: var(--altura-header);
+  padding: 0 1rem;
+  background-color: transparent; /* se puede personalizar */
 }
 
+/* BOTÓN DE MENÚ (☰) */
 #menu-toggle {
   position: absolute;
-  left: 10px;               /* fijado a la izquierda */
-  font-size: 24px;
+  left: 10px;
+  font-size: var(--tamano-icono);
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--color-icono);
 }
 
-.logos img {
-  height: 50px;             /* ajustá según el tamaño deseado del logo */
-  margin-right: 10px;
+/* CONTENEDOR CENTRADO DE LOGO Y TÍTULO */
+.centro {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-logo-titulo);
 }
 
+/* LOGO */
+.logo {
+  height: var(--altura-logo);
+  display: block;
+}
+
+/* TÍTULO */
 .titulo {
-  font-size: 1.5rem;
+  font-size: var(--fuente-titulo-header);
+  color: #fff; /* Podés ajustar según el fondo */
 }

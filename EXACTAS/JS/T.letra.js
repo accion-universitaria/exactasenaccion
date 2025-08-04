@@ -1,18 +1,24 @@
-  document.addEventListener("DOMContentLoaded", function () {
-    const parrafos = document.querySelectorAll('.texto-noticia');
+document.addEventListener("DOMContentLoaded", function () {
+  const parrafos = document.querySelectorAll('.texto-noticia');
 
-    parrafos.forEach(p => {
-      const length = p.innerText.length;
+  parrafos.forEach(p => {
+    const length = p.innerText.length;
+    const screenWidth = window.innerWidth;
 
-      // Ajustar según rangos de longitud de caracteres
+    // Solo aplicar en pantallas grandes
+    if (screenWidth > 768) {
       if (length >= 1050) {
-        p.style.fontSize = '50%';
+        p.style.fontSize = '0.9rem';
       } else if (length >= 800) {
-        p.style.fontSize = '50%';
+        p.style.fontSize = '1rem';
       } else if (length >= 400) {
-        p.style.fontSize = '45%';
+        p.style.fontSize = '1.05rem';
       } else {
-        p.style.fontSize = '40%';
+        p.style.fontSize = '1.1rem';
       }
-    });
+    } else {
+      // En móviles, mantener tamaño legible
+      p.style.fontSize = '1rem';
+    }
   });
+});

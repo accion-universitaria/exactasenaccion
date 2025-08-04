@@ -1,50 +1,108 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header, nav, main, footer {
-    width: 100%;
+  width: 100%;
 }
 
 /* GENERAL */
 body {
-    margin: 0;
-    padding: 0; 
-    background-color: #111;
+  background-color: #111;
+  color: #fff;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR PRINCIPAL - DISEÑO MOBILE FIRST */
 .contenedor-articulos {
-    margin: 20px auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr;       /* 1 columna por defecto (mobile) */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-/* ARTÍCULO INDIVIDUAL */
+/* TARJETAS DE ARTÍCULO */
 .articulo {
-    background-color: #000;
-    color: #fff;
-    border: 5px solid #fff;
-    padding: 1rem;
-    overflow: hidden;
-    border-radius: 10px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  background-color: #000;
+  border: 3px solid #efe102;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(239, 225, 2, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* TEXTO */
+.articulo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(239, 225, 2, 0.6);
+}
+
+/* TEXTO DE ARTÍCULO */
 .texto-articulo {
-    flex: 1 1 300px;
-    text-align: justify;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* IMÁGENES */
+.portadas,
+.CEFCE-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+/* ENCABEZADOS */
+h1, h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #efe102;
+}
+
+h4.titulo-novedades {
+  font-size: 14px;
+  color: #b1a6a6;
+  margin-bottom: 6px;
+}
+
+.fechas {
+  font-size: 12px;
+  color: #efe102;
+  margin-bottom: 6px;
+}
+/* BOTÓN INSTAGRAM */
+#instagramButton {
+  background-color: #12abe9;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.3s ease;
+}
+
+#instagramButton:hover {
+  background-color: #1964dc;
+  color: #fff;
+}
+/* ANIMACIÓN MARQUESINA */
+@keyframes desplazamiento-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .marquesina {
@@ -54,65 +112,48 @@ body {
 }
 
 .texto-noticia {
-  width: 100%; /* Asegura que ocupe todo el contenedor negro */
-  overflow: hidden; /* Oculta el texto que se desborda al comienzo y final */
+  width: 100%;
+  overflow: hidden;
   position: relative;
 }
 
-
-/* IMÁGENES */
- .portadas {
-    width: 120px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-   align-items: center;
+.extra-texto {
+  display: none;
 }
 
-.CEFCE-logo{
-    width: 120px;
+.texto-noticia.expandido .extra-texto {
+  display: inline;
 }
 
-/* ENCABEZADOS */
-h1, h2 {
-    font-size: 18px;
-    margin-bottom: 4px;
-    color: #fff;
+.toggle-texto {
+  background: none;
+  border: none;
+  color: #efe102;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: underline;
+  margin-top: 8px;
+  display: inline-block;
 }
 
-h4.titulo-novedades {
-    font-size: 14px;
-    color: #b1a6a6;
-    margin-bottom: 5px;
-}
+/* === MEDIA QUERIES === */
 
-.fechas {
-    font-size: 12px;
-    color: #efe102;
-    margin-bottom: 6px;
-}
-
-/* RESPONSIVO */
-@media (max-width: 600px) {
-    .articulo {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .CEFCE-logo, .portadas {
-        width: 80px;
-    }
-
-    .texto-articulo {
-        text-align: left;
-    }
-}
-/* Animación */
-@keyframes desplazamiento-horizontal {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
+/* TABLET: 2 columnas */
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+  .contenedor-articulos {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (min-width: 1024px) {
+  .contenedor-articulos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .articulo {
+    width: 100%;      
+    max-width: unset; 
+  }
+}
+
