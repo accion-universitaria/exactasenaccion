@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExEA - Exactas En Acción</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    .app-wrapper {
+      min-height: 100%;
+      width: 100%;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #2e2c2f 0%, #3d3a3d 50%, #2e2c2f 100%);
+    }
+
+    .hero-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23efe102' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #efe102;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #efe102 0%, #d4ca02 100%);
+      transition: all 0.3s ease;
+      color: #2e2c2f;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(239, 225, 2, 0.4);
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #efe102, #fff84d);
+      border-radius: 2px;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .news-card {
+      border-left: 4px solid #efe102;
+    }
+
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="app-wrapper overflow-auto"><!-- Navigation -->
+   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: rgba(46, 44, 47, 0.95); backdrop-filter: blur(10px);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex items-center justify-between h-16">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #efe102, #d4ca02);">
+        <svg class="w-6 h-6" style="color: #2e2c2f;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
+        </svg>
+       </div><span id="nav-title" class="text-white font-bold text-lg" style="font-family: 'Montserrat', sans-serif;">ExEA - Exactas En Acción</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8"><a href="#inicio" class="nav-link text-white text-sm font-medium" style="font-family: 'Open Sans', sans-serif;">Inicio</a> <a href="#nosotros" class="nav-link text-white text-sm font-medium" style="font-family: 'Open Sans', sans-serif;">Nosotros</a> <a href="#noticias" class="nav-link text-white text-sm font-medium" style="font-family: 'Open Sans', sans-serif;">Noticias</a> <a href="#actividades" class="nav-link text-white text-sm font-medium" style="font-family: 'Open Sans', sans-serif;">Actividades</a> <a href="#contacto" class="nav-link text-white text-sm font-medium" style="font-family: 'Open Sans', sans-serif;">Contacto</a>
+      </div><button id="mobile-menu-btn" class="md:hidden text-white p-2">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-800 px-4 py-4">
+     <div class="flex flex-col gap-4"><a href="#inicio" class="text-white text-sm font-medium">Inicio</a> <a href="#nosotros" class="text-white text-sm font-medium">Nosotros</a> <a href="#noticias" class="text-white text-sm font-medium">Noticias</a> <a href="#actividades" class="text-white text-sm font-medium">Actividades</a> <a href="#contacto" class="text-white text-sm font-medium">Contacto</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="inicio" class="gradient-bg hero-pattern relative" style="min-height: 100%; padding-top: 64px;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate-fade-in"><span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6" style="background: rgba(239, 225, 2, 0.2); color: #efe102; font-family: 'Open Sans', sans-serif;"> 🎓 Facultad de Ciencias Exactas </span>
+       <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight" style="font-family: 'Montserrat', sans-serif;">Construyendo el Futuro<br><span style="color: #efe102;">Juntos</span></h1>
+       <p id="hero-subtitle" class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">Somos ExEA, la agrupación estudiantil que trabaja día a día por los derechos y el bienestar de todos los estudiantes. ¡Sumate a transformar nuestra facultad!</p>
+       <div class="flex flex-wrap gap-4"><a href="#nosotros" class="btn-primary px-8 py-4 rounded-full font-bold text-sm" style="font-family: 'Montserrat', sans-serif;"> Conocenos → </a> <a href="#contacto" class="px-8 py-4 rounded-full text-white font-bold text-sm border-2 border-white/30 hover:bg-white/10 transition-all" style="font-family: 'Montserrat', sans-serif;"> Contactanos </a>
+       </div>
+      </div>
+      <div class="hidden md:flex justify-center">
+       <div class="relative">
+        <div class="w-72 h-72 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(239, 225, 2, 0.3), rgba(212, 202, 2, 0.1)); border: 3px solid rgba(239, 225, 2, 0.3);">
+         <div class="w-56 h-56 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(239, 225, 2, 0.4), rgba(212, 202, 2, 0.2)); border: 2px solid rgba(239, 225, 2, 0.4);">
+          <svg class="w-32 h-32" style="color: #efe102;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+          </svg>
+         </div>
+        </div>
+        <div class="absolute -top-4 -right-4 w-16 h-16 rounded-full flex items-center justify-center text-2xl" style="background: linear-gradient(135deg, #efe102, #d4ca02);">
+         📚
+        </div>
+        <div class="absolute -bottom-4 -left-4 w-14 h-14 rounded-full flex items-center justify-center text-xl" style="background: linear-gradient(135deg, #efe102, #d4ca02);">
+         ✊
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+     <svg class="w-8 h-8 text-white/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+     </svg>
+    </div>
+   </section><!-- Stats Section -->
+   <section class="py-12" style="background: #0f172a;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="text-center">
+       <div class="text-3xl md:text-4xl font-bold mb-2" style="color: #efe102; font-family: 'Montserrat', sans-serif;">
+        5000+
+       </div>
+       <div class="text-gray-400 text-sm" style="font-family: 'Open Sans', sans-serif;">
+        Estudiantes
+       </div>
+      </div>
+      <div class="text-center">
+       <div class="text-3xl md:text-4xl font-bold mb-2" style="color: #efe102; font-family: 'Montserrat', sans-serif;">
+        15+
+       </div>
+       <div class="text-gray-400 text-sm" style="font-family: 'Open Sans', sans-serif;">
+        Años de Historia
+       </div>
+      </div>
+      <div class="text-center">
+       <div class="text-3xl md:text-4xl font-bold mb-2" style="color: #efe102; font-family: 'Montserrat', sans-serif;">
+        50+
+       </div>
+       <div class="text-gray-400 text-sm" style="font-family: 'Open Sans', sans-serif;">
+        Actividades Anuales
+       </div>
+      </div>
+      <div class="text-center">
+       <div class="text-3xl md:text-4xl font-bold mb-2" style="color: #efe102; font-family: 'Montserrat', sans-serif;">
+        100%
+       </div>
+       <div class="text-gray-400 text-sm" style="font-family: 'Open Sans', sans-serif;">
+        Compromiso
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="nosotros" class="py-20" style="background: #f8fafc;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16">
+      <h2 id="about-title" class="section-title text-3xl md:text-4xl font-bold mb-4" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">¿Quiénes Somos?</h2>
+      <p id="about-text" class="text-gray-600 max-w-2xl mx-auto mt-8" style="font-family: 'Open Sans', sans-serif;">Somos ExEA - Exactas En Acción, una agrupación estudiantil comprometida con la defensa de los derechos de los estudiantes, la mejora de la calidad educativa y la construcción de una universidad más inclusiva y democrática.</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #efe102, #d4ca02);">
+        <svg class="w-7 h-7" style="color: #2e2c2f;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-4" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Representación</h3>
+       <p class="text-gray-600" style="font-family: 'Open Sans', sans-serif;">Defendemos los derechos de los estudiantes en todos los órganos de gobierno de la facultad.</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #2e2c2f, #3d3a3d);">
+        <svg class="w-7 h-7" style="color: #efe102;" fill="currentColor" viewbox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-4" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Comunidad</h3>
+       <p class="text-gray-600" style="font-family: 'Open Sans', sans-serif;">Organizamos actividades culturales, deportivas y sociales para fortalecer los lazos entre estudiantes.</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #efe102, #d4ca02);">
+        <svg class="w-7 h-7" style="color: #2e2c2f;" fill="currentColor" viewbox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-4" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Servicios</h3>
+       <p class="text-gray-600" style="font-family: 'Open Sans', sans-serif;">Brindamos apuntes, tutorías, asesoramiento académico y apoyo a los estudiantes.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- News Section -->
+   <section id="noticias" class="py-20" style="background: white;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
+      <div>
+       <h2 class="section-title text-3xl md:text-4xl font-bold mb-4" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Últimas Noticias</h2>
+       <p class="text-gray-600 mt-8" style="font-family: 'Open Sans', sans-serif;">Enterate de las novedades más importantes</p>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article class="card-hover news-card bg-gray-50 rounded-xl p-6"><span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4" style="background: rgba(239, 225, 2, 0.2); color: #2e2c2f;"> Académico </span>
+       <h3 class="text-xl font-bold mb-3" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Nuevas Becas Disponibles</h3>
+       <p class="text-gray-600 mb-4" style="font-family: 'Open Sans', sans-serif;">Se abrió la inscripción para las becas de apoyo económico del segundo cuatrimestre.</p>
+       <div class="flex items-center text-sm text-gray-500">
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z" />
+        </svg> 15 de Mayo, 2024
+       </div>
+      </article>
+      <article class="card-hover news-card bg-gray-50 rounded-xl p-6"><span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4" style="background: rgba(239, 225, 2, 0.2); color: #2e2c2f;"> Evento </span>
+       <h3 class="text-xl font-bold mb-3" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Semana de la Ciencia</h3>
+       <p class="text-gray-600 mb-4" style="font-family: 'Open Sans', sans-serif;">Del 20 al 24 de mayo se realizarán charlas, talleres y exposiciones en toda la facultad.</p>
+       <div class="flex items-center text-sm text-gray-500">
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z" />
+        </svg> 12 de Mayo, 2024
+       </div>
+      </article>
+      <article class="card-hover news-card bg-gray-50 rounded-xl p-6"><span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4" style="background: rgba(239, 225, 2, 0.2); color: #2e2c2f;"> Comunicado </span>
+       <h3 class="text-xl font-bold mb-3" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Asamblea General</h3>
+       <p class="text-gray-600 mb-4" style="font-family: 'Open Sans', sans-serif;">Convocamos a todos los estudiantes a la asamblea del viernes 25 de mayo a las 18hs.</p>
+       <div class="flex items-center text-sm text-gray-500">
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z" />
+        </svg> 10 de Mayo, 2024
+       </div>
+      </article>
+     </div>
+    </div>
+   </section><!-- Activities Section -->
+   <section id="actividades" class="py-20" style="background: #2e2c2f;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16">
+      <h2 class="section-title text-3xl md:text-4xl font-bold text-white mb-4" style="font-family: 'Montserrat', sans-serif;">Nuestras Actividades</h2>
+      <p class="text-gray-300 max-w-2xl mx-auto mt-8" style="font-family: 'Open Sans', sans-serif;">Organizamos diversas actividades para el bienestar y desarrollo de la comunidad estudiantil</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center card-hover">
+       <div class="text-4xl mb-4">
+        📖
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2" style="font-family: 'Montserrat', sans-serif;">Apuntes</h3>
+       <p class="text-gray-300 text-sm" style="font-family: 'Open Sans', sans-serif;">Material de estudio gratuito</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center card-hover">
+       <div class="text-4xl mb-4">
+        🎯
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2" style="font-family: 'Montserrat', sans-serif;">Tutorías</h3>
+       <p class="text-gray-300 text-sm" style="font-family: 'Open Sans', sans-serif;">Apoyo académico personalizado</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center card-hover">
+       <div class="text-4xl mb-4">
+        ⚽
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2" style="font-family: 'Montserrat', sans-serif;">Deportes</h3>
+       <p class="text-gray-300 text-sm" style="font-family: 'Open Sans', sans-serif;">Torneos y actividades recreativas</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center card-hover">
+       <div class="text-4xl mb-4">
+        🎉
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2" style="font-family: 'Montserrat', sans-serif;">Eventos</h3>
+       <p class="text-gray-300 text-sm" style="font-family: 'Open Sans', sans-serif;">Fiestas y encuentros sociales</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contacto" class="py-20" style="background: #f8fafc;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid md:grid-cols-2 gap-12">
+      <div>
+       <h2 class="section-title text-3xl md:text-4xl font-bold mb-8" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Contactanos</h2>
+       <p class="text-gray-600 mb-8 mt-8" style="font-family: 'Open Sans', sans-serif;">¿Tenés alguna consulta, sugerencia o querés sumarte? No dudes en escribirnos.</p>
+       <div class="space-y-6">
+        <div class="flex items-center gap-4">
+         <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #efe102, #d4ca02);">
+          <svg class="w-5 h-5" style="color: #2e2c2f;" fill="currentColor" viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+         </div>
+         <div>
+          <div class="font-semibold" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">
+           Email
+          </div>
+          <div class="text-gray-600" style="font-family: 'Open Sans', sans-serif;">
+           exea@exactas.edu
+          </div>
+         </div>
+        </div>
+        <div class="flex items-center gap-4">
+         <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #2e2c2f, #3d3a3d);">
+          <svg class="w-5 h-5" style="color: #efe102;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+          </svg>
+         </div>
+         <div>
+          <div class="font-semibold" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">
+           Ubicación
+          </div>
+          <div class="text-gray-600" style="font-family: 'Open Sans', sans-serif;">
+           Pabellón 2, Planta Baja
+          </div>
+         </div>
+        </div>
+        <div class="flex items-center gap-4">
+         <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #efe102, #d4ca02);">
+          <svg class="w-5 h-5" style="color: #2e2c2f;" fill="currentColor" viewbox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+          </svg>
+         </div>
+         <div>
+          <div class="font-semibold" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">
+           Horario de Atención
+          </div>
+          <div class="text-gray-600" style="font-family: 'Open Sans', sans-serif;">
+           Lunes a Viernes 10-18hs
+          </div>
+         </div>
+        </div>
+       </div><!-- Social Media -->
+       <div class="mt-8">
+        <div class="font-semibold mb-4" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">
+         Seguinos en Instagram
+        </div>
+        <div class="flex gap-4"><a href="https://instagram.com/exactas.enaccion" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 hover:bg-gray-300 transition-colors">
+          <svg class="w-5 h-5" style="color: #2e2c2f;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg></a>
+        </div>
+       </div>
+      </div>
+      <div>
+       <form id="contact-form" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="mb-6"><label for="name" class="block text-sm font-semibold mb-2" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Nombre</label> <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:border-transparent" style="font-family: 'Open Sans', sans-serif; focus:ring-color: #efe102;" placeholder="Tu nombre">
+        </div>
+        <div class="mb-6"><label for="email" class="block text-sm font-semibold mb-2" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Email</label> <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:border-transparent" style="font-family: 'Open Sans', sans-serif;" placeholder="tu@email.com">
+        </div>
+        <div class="mb-6"><label for="message" class="block text-sm font-semibold mb-2" style="color: #2e2c2f; font-family: 'Montserrat', sans-serif;">Mensaje</label> <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:border-transparent resize-none" style="font-family: 'Open Sans', sans-serif;" placeholder="¿En qué podemos ayudarte?"></textarea>
+        </div><button type="submit" class="w-full btn-primary py-4 rounded-lg font-bold" style="font-family: 'Montserrat', sans-serif;"> Enviar Mensaje </button>
+        <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg text-center" style="font-family: 'Open Sans', sans-serif;">
+         ¡Mensaje enviado con éxito! Te responderemos pronto.
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer style="background: #0f172a;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+     <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #efe102, #d4ca02);">
+         <svg class="w-6 h-6" style="color: #2e2c2f;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
+         </svg>
+        </div><span class="text-white font-bold text-lg" style="font-family: 'Montserrat', sans-serif;">ExEA</span>
+       </div>
+       <p class="text-gray-400 text-sm" style="font-family: 'Open Sans', sans-serif;">Trabajando por una facultad más inclusiva, democrática y de excelencia.</p>
+      </div>
+      <div>
+       <h4 class="text-white font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Enlaces</h4>
+       <div class="flex flex-col gap-2"><a href="#inicio" class="text-gray-400 hover:text-white text-sm transition-colors" style="font-family: 'Open Sans', sans-serif;">Inicio</a> <a href="#nosotros" class="text-gray-400 hover:text-white text-sm transition-colors" style="font-family: 'Open Sans', sans-serif;">Nosotros</a> <a href="#noticias" class="text-gray-400 hover:text-white text-sm transition-colors" style="font-family: 'Open Sans', sans-serif;">Noticias</a> <a href="#contacto" class="text-gray-400 hover:text-white text-sm transition-colors" style="font-family: 'Open Sans', sans-serif;">Contacto</a>
+       </div>
+      </div>
+      <div>
+       <h4 class="text-white font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Recursos</h4>
+       <div class="flex flex-col gap-2"><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors" style="font-family: 'Open Sans', sans-serif;">Apuntes</a> <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors" style="font-family: 'Open Sans', sans-serif;">Calendario Académico</a> <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors" style="font-family: 'Open Sans', sans-serif;">Becas</a> <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors" style="font-family: 'Open Sans', sans-serif;">FAQ</a>
+       </div>
+      </div>
+     </div>
+     <div class="border-t border-gray-800 pt-8 text-center">
+      <p class="text-gray-500 text-sm" style="font-family: 'Open Sans', sans-serif;">© 2024 ExEA - Exactas En Acción. Todos los derechos reservados.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      site_title: 'ExEA - Exactas En Acción',
+      hero_title: 'Construyendo el Futuro Juntos',
+      hero_subtitle: 'Somos ExEA, la agrupación estudiantil que trabaja día a día por los derechos y el bienestar de todos los estudiantes. ¡Sumate a transformar nuestra facultad!',
+      about_title: '¿Quiénes Somos?',
+      about_text: 'Somos ExEA - Exactas En Acción, una agrupación estudiantil comprometida con la defensa de los derechos de los estudiantes, la mejora de la calidad educativa y la construcción de una universidad más inclusiva y democrática.',
+      primary_color: '#2e2c2f',
+      accent_color: '#efe102',
+      text_color: '#374151',
+      background_color: '#f8fafc',
+      surface_color: '#ffffff',
+      font_family: 'Montserrat',
+      font_size: 16
+    };
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          // Update text content
+          document.getElementById('nav-title').textContent = config.site_title || defaultConfig.site_title;
+          
+          const heroTitleEl = document.getElementById('hero-title');
+          const heroTitleText = config.hero_title || defaultConfig.hero_title;
+          heroTitleEl.innerHTML = heroTitleText.replace('Juntos', '<span style="color: #efe102;">Juntos</span>').replace(/\n/g, '<br/>');
+          
+          document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+          document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+          document.getElementById('about-text').textContent = config.about_text || defaultConfig.about_text;
+
+          // Apply font changes
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          const fontSize = config.font_size || defaultConfig.font_size;
+          
+          document.querySelectorAll('[style*="font-family: \'Montserrat\'"]').forEach(el => {
+            el.style.fontFamily = `${fontFamily}, sans-serif`;
+          });
+
+          // Apply font size scaling
+          heroTitleEl.style.fontSize = `${fontSize * 3}px`;
+          document.getElementById('hero-subtitle').style.fontSize = `${fontSize * 1.125}px`;
+          document.getElementById('about-title').style.fontSize = `${fontSize * 2}px`;
+          document.getElementById('about-text').style.fontSize = `${fontSize}px`;
+
+          // Apply colors
+          const primaryColor = config.primary_color || defaultConfig.primary_color;
+          const accentColor = config.accent_color || defaultConfig.accent_color;
+          const backgroundColor = config.background_color || defaultConfig.background_color;
+          const surfaceColor = config.surface_color || defaultConfig.surface_color;
+          const textColor = config.text_color || defaultConfig.text_color;
+
+          // Update gradient backgrounds
+          document.querySelectorAll('.gradient-bg').forEach(el => {
+            el.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${adjustColor(primaryColor, 10)} 50%, ${primaryColor} 100%)`;
+          });
+
+          // Update section backgrounds
+          document.querySelectorAll('[style*="background: #f8fafc"]').forEach(el => {
+            el.style.background = backgroundColor;
+          });
+
+          // Update card backgrounds
+          document.querySelectorAll('.bg-white').forEach(el => {
+            el.style.background = surfaceColor;
+          });
+
+          // Update text colors
+          document.querySelectorAll('[style*="color: #2e2c2f"]').forEach(el => {
+            el.style.color = primaryColor;
+          });
+
+          document.querySelectorAll('.text-gray-600').forEach(el => {
+            el.style.color = textColor;
+          });
+
+          // Update accent colors (buttons, highlights)
+          document.querySelectorAll('.btn-primary').forEach(el => {
+            el.style.background = `linear-gradient(135deg, ${accentColor} 0%, ${adjustColor(accentColor, -10)} 100%)`;
+          });
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => window.elementSdk.setConfig({ background_color: value })
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => window.elementSdk.setConfig({ surface_color: value })
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => window.elementSdk.setConfig({ text_color: value })
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => window.elementSdk.setConfig({ primary_color: value })
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => window.elementSdk.setConfig({ accent_color: value })
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => window.elementSdk.setConfig({ font_family: value })
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => window.elementSdk.setConfig({ font_size: value })
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['site_title', config.site_title || defaultConfig.site_title],
+          ['hero_title', config.hero_title || defaultConfig.hero_title],
+          ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+          ['about_title', config.about_title || defaultConfig.about_title],
+          ['about_text', config.about_text || defaultConfig.about_text]
+        ])
+      });
+    }
+
+    // Helper function to adjust color brightness
+    function adjustColor(color, percent) {
+      const num = parseInt(color.replace('#', ''), 16);
+      const amt = Math.round(2.55 * percent);
+      const R = (num >> 16) + amt;
+      const G = (num >> 8 & 0x00FF) + amt;
+      const B = (num & 0x0000FF) + amt;
+      return '#' + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Show success message
+      formSuccess.classList.remove('hidden');
+      
+      // Reset form
+      contactForm.reset();
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        formSuccess.classList.add('hidden');
+      }, 5000);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bb620c707506ccb',t:'MTc2Nzk4NDcwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
